@@ -1,0 +1,14 @@
+
+h1 {
+    margin:50px auto 100px auto;
+}
+
+img {
+    border-radius: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+div.col-lg-4 {
+    margin-bottom: 100px;
+}
