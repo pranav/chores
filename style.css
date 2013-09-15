@@ -4,9 +4,11 @@ h1 {
 }
 
 img {
-    border-radius: 50px;
+    border-radius: 200px;
     margin: 0 auto;
     display: block;
+    width: 200px;
+    height: 200px;
 }
 
 div.col-lg-4 {
