@@ -33,7 +33,7 @@
       window.chores = apicall('chore.json')
 
       for(i = 0; i < window.users.length; i++) {
-        var tmp = '<div class="col-lg-4"><img src="' + window.chores[i].image + '"><h2 class="text-center">' + window.users[(i + window.week) % window.users.length].name + '</h2></div>';
+        var tmp = '<div class="col-sm-4"><img src="' + window.chores[i].image + '"><h2 class="text-center">' + window.users[(i + window.week) % window.users.length].name + '</h2></div>';
 
         $('.container').append(tmp);
       }
@@ -46,7 +46,7 @@
 <body>
 <div class="container">
   <div class="col-xs-12">
-    <h1 class="text-center">Chore</h1>
+    <h1 class="text-center">Chores</h1>
   </div>
 </div>
 </body>
