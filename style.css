@@ -1,0 +1,16 @@
+
+h1 {
+    margin:50px auto 100px auto;
+}
+
+img {
+    border-radius: 200px;
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+div.col-lg-4 {
+    margin-bottom: 100px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="/md5.js"></script>
+  <title>Chore</title>
+
+  <script type="text/javascript">
+    startWeekTimestamp = 1378684800;
+    secondsInWeek = 604800;
+    currentTimestamp = Math.round( +new Date / 1000 );
+
+    window.week = Math.floor((currentTimestamp - startWeekTimestamp) / secondsInWeek);
+
+    function apicall(url) {
+      var tmp = "";
+      $.ajax(url, {
+        async: false,
+        success: function(data){
+          tmp = data
+        }
+      })
+      return tmp;
+    }
+
+
+    $(document).ready(function(){
+      window.users = apicall('user.json')
+      window.chores = apicall('chore.json')
+
+      for(i = 0; i < window.users.length; i++) {
+        var tmp = '<div class="col-lg-4"><img src="' + window.chores[i].image + '"><h2 class="text-center">' + window.users[(i + window.week) % window.users.length].name + '</h2></div>';
+
+        $('.container').append(tmp);
+      }
+
+    });
+
+
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="col-xs-12">
+    <h1 class="text-center">Chore</h1>
+  </div>
+</div>
+</body>
+</html>
