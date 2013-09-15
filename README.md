@@ -4,10 +4,10 @@ chores
 Because we're CS people, we obviously need to build a service for rotating
 chores.
 
-We start at week 0, and keep incrementing number of weeks. Week "w" mod 5 will
+We start at week 0, and keep incrementing number of weeks. ( Week "w" + Offset ) mod 5 will
 tell us which chore is assigned to who.
 
-| Name        | Modulus |
+| Name        | Offset  |
 | ----------- | ------- |
 | Josh        | 0       |
 | Spencer     | 1       |
