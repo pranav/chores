@@ -10,7 +10,11 @@
   <title>Chore</title>
 
   <script type="text/javascript">
-    window.week = 0;
+    startWeekTimestamp = 1378684800;
+    secondsInWeek = 604800;
+    currentTimestamp = Math.round( +new Date / 1000 );
+
+    window.week = Math.floor((currentTimestamp - startWeekTimestamp) / secondsInWeek);
 
     function apicall(url) {
       var tmp = "";
