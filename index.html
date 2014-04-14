@@ -21,7 +21,7 @@
       $.ajax(url, {
         async: false,
         success: function(data){
-          tmp = data
+          tmp = $.parseJSON(data)
         }
       })
       return tmp;
@@ -35,7 +35,7 @@
       for(i = 0; i < window.users.length; i++) {
         var tmp = '<div class="col-sm-4"><img src="' + window.chores[i].image + '"><h2 class="text-center">' + window.users[(i + window.week) % window.users.length].name + '</h2></div>';
 
-        $('.container').append(tmp);
+        $('.content').append(tmp);
       }
 
     });
@@ -45,9 +45,12 @@
 </head>
 <body>
 <div class="container">
-  <div class="col-xs-12">
-    <h1 class="text-center">Chores</h1>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center">Chores</h1>
+    </div>
   </div>
+  <div class="row content"></div>
 </div>
 </body>
 </html>
